@@ -1,0 +1,1 @@
+angular.module('melmothApp', ['chapterCtrl', 'editionService', 'ngSanitize', 'app.routes'])

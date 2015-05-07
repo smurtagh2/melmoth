@@ -1,0 +1,23 @@
+.para{
+	color: black;
+	text-indent: 50px;
+}
+
+.note{
+	border-left: 2px solid black;
+	background-color: red;
+}
+
+.chapters{
+	margin-top: 50px;
+}
+
+.highlighted { background: yellow }
+
+.navbar-fixed-top {
+}
+
+.navbar-fixed-top.ui-scrollfix {
+   position: fixed;
+   top:0;
+}
