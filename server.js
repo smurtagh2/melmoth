@@ -40,5 +40,5 @@ app.get('*', function(req, res) {
 });
 
 // start the local server on port 8080 (http://localhost:8080)
-app.listen(8080);
+app.listen(config.port);
 console.log('Melmoth Magic happens on port 8080.');
