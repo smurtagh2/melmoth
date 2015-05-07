@@ -36,7 +36,7 @@ app.use('/edition', editionRoutes);
 
 // set up our one route to the index.html file
 app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname + '/public/app/views/chapterPages.html'))
+	res.sendFile(path.join(__dirname + '/public/app/views/index.html'))
 });
 
 // start the local server on port 8080 (http://localhost:8080)
