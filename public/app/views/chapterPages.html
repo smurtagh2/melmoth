@@ -88,7 +88,7 @@
 				</blockquote>
 				<div ng-repeat="text in c.paragraphs | filter:searchText" class="row">
 					<div>
-						<a href="#{{ text.paragraph_id }}"><p class="para" ng-bind-html="text.text | highlight:searchText"></p></a>
+						<p id="{{ text.paragraph_id }}" class="para" ng-bind-html="text.text | highlight:searchText"></p>
 					</div>
 					<!--<div class="col-xs-4 pull-right" id="{{ text.paragraph_id }}">
 						<p ng-bind-html="text.editors_note" class="note" id="{{ text.paragraph_id }}"></p>
