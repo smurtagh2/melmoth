@@ -74,8 +74,10 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 		<div class="row">
-			<div class="col-xs-8" ng-repeat="c in chapter.editions">
-				<a href="#{{ c.chapter_number }}">{{ c.chapter_title }}</a>
+			<div class="col-xs-12">
+				<div class="btn-group" role="group" aria-label="...">
+  					<a  ng-repeat="c in chapter.editions" href="#{{ c.chapter_number }}" class="btn btn-primary btn-md" role="button">{{ c.chapter_title }}</a>
+				</div>
 			</div>
 		</div>
 		<div class="row">
