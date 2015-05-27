@@ -19,11 +19,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.0/angular-scroll.min.js"></script>
 
 	<!-- controllers -->
 	<script src="app/controllers/chapterCtrl.js"></script>
-	
+
 
 	<!-- services -->
 	<script src="app/services/editionService.js"></script>
@@ -35,7 +34,7 @@
 </head>
 <body ng-app="melmothApp" ng-controller="chapterController as chapter">
 	<div class="container">
-		<nav class="navbar navbar-default">
+			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
@@ -72,32 +71,38 @@
 						</form>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->
-		</nav>
-		<div class="row">
-			<nav class="col-xs-3 bs-docs-sidebar"> 
-				<ul id="sidebar" class="nav nav-stacked fixed">
-					<li ng-repeat="doc in chapter.editions" du-scrollspy="{{doc.chapter_number}}">
-    					<a href="#{{doc.chapter_number}}" du-smooth-scroll>{{doc.chapter_title}}</a>
-    					<ul class="nav nav-stacked summaries">
-        					<li ng-repeat="para in doc.paragraphs" du-scrollspy="{{para.paragraph_id}}"><a href="#{{para.paragraph_id}}" du-smooth-scroll>{{para.summary}}</a></li>
-    					</ul>
-					</li>
-					<!-- Same for Group B & C -->
-				</ul>
 			</nav>
-			<div class="col-xs-9" id="content">
-				<section ng-repeat="doc in chapter.editions" id="{{doc.chapter_number}}" class="group text-justify">
-					<h3>{{doc.chapter_title}}</h1>
-					<div class="subgroup">
-						<blockquote>
-							<p ng-bind-html="doc.epigraph.quote"></p>
-							<p>- {{ doc.epigraph.bibl }}</p>
-						</blockquote>
-						<p ng-repeat="para in doc.paragraphs" ng-bind-html="para.text" id="{{para.paragraph_id}}"></p>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="btn-group" role="group" aria-label="...">
+	  					<a  ng-repeat="c in chapter.editions" href="chapters/#{{ c.chapter.chapter_number }}" class="btn btn-primary btn-md" role="button">{{ c.chapter.chapter_title }}</a>
 					</div>
-				</section>
+				</div>
 			</div>
-		</div>
+			<div class="row">
+				<div ng-repeat="c in chapter.editions" class="col-xs-10 text-justify chapter1" id="{{ c.chapter.chapter_number }}">
+					<h1>{{ c.chapter.chapter_title }}</h1>
+					<blockquote>
+						<p ng-bind-html="c.chapter.epigraph.quote"></p>
+						<p>- {{ c.chapter.epigraph.bibl }}</p>
+					</blockquote>
+					<div ng-repeat="para in c.chapter.paragraphs | filter:searchText" class="row">
+						<div class="col-xs-1">
+							<p ng-bind-html="para.paragraph_id"></p>
+						</div>
+						<div class="col-xs-11">
+							<p id="{{ para.paragraph_id }}" class="para" ng-bind-html="para.text | highlight:searchText"></p>
+						</div>
+					</div>
+				</div>
+				<div class="cols-xs-2 chapterNav" ng-repeat="c in chapter.editions">
+					<nav class="navbar navbar-default">
+						<ul class="navbar nav">
+							<li ng-repeat="para in c.chapter.paragraphs"><a href="chapters/#{{para.paragraph_id}}">{{para.paragraph_id}} - {{ para.summary }}<a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
 	</div>
 </body>
 </html>

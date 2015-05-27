@@ -12,23 +12,13 @@ var altSchema = new Schema({
 			},
 			epigraph: {
 				quote: {
-					l: [
-							String, ref: {
-							conent_type: String,
-							n: String,
-							content: String
-					}]
+					l: [Schema.Types.Mixed]
 				},
 				bibl: String,
 			},
 			p: [{
 				content_type: String,
-				content: [
-							String, ref: {
-							content_type: String,
-							n: String,
-							content: String}
-						]
+				content: [Schema.Types.Mixed]
 			}]
 		}],
 

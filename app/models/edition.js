@@ -14,6 +14,7 @@ var editionSchema = new Schema({
 			paragraphs: [{
 				text: String,
 				editor_note: String,
+				summary: String,
 				paragraph_id: String
 			}]
 		}

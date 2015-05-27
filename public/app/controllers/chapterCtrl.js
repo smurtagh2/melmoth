@@ -1,4 +1,4 @@
-angular.module('chapterCtrl', ['editionService', 'ngSanitize'])
+angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll'])
 
 .controller('chapterController', function(Edition){
 
@@ -16,16 +16,6 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize'])
 			self.paragraphs = data;
 		});
 
-	this.tab = "1";
-
-    this.setTab = function(newValue){
-      this.tab = newValue;
-    };
-
-    this.isSet = function(tabName){
-      return this.tab === tabName;
-    
-    };
 })
 
 .filter('highlight', function($sce) {

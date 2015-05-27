@@ -19,11 +19,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.0/angular-scroll.min.js"></script>
+
 
 	<!-- controllers -->
 	<script src="app/controllers/chapterCtrl.js"></script>
-	
+
 
 	<!-- services -->
 	<script src="app/services/editionService.js"></script>
@@ -33,7 +33,7 @@
 	<script src="app/app.routes.js"></script>
 	<script src="app/app.js"></script>
 </head>
-<body ng-app="melmothApp" ng-controller="chapterController as chapter">
+<body ng-app="melmothApp" ng-controller="chapterController as chapter" data-spy="scroll" data-target="#side-nav">
 	<div class="container">
 		<nav class="navbar navbar-default">
 				<div class="container-fluid">
@@ -74,21 +74,20 @@
 				</div><!-- /.container-fluid -->
 		</nav>
 		<div class="row">
-			<nav class="col-xs-3 bs-docs-sidebar"> 
-				<ul id="sidebar" class="nav nav-stacked fixed">
-					<li ng-repeat="doc in chapter.editions" du-scrollspy="{{doc.chapter_number}}">
-    					<a href="#{{doc.chapter_number}}" du-smooth-scroll>{{doc.chapter_title}}</a>
-    					<ul class="nav nav-stacked summaries">
-        					<li ng-repeat="para in doc.paragraphs" du-scrollspy="{{para.paragraph_id}}"><a href="#{{para.paragraph_id}}" du-smooth-scroll>{{para.summary}}</a></li>
-    					</ul>
+			<div class="col-xs-4" id="side-nav"> 
+				<ul class="nav nav-list affix">
+					<li ng-repeat="doc in chapter.editions">
+						<ul>
+							<li ng-repeat="para in doc.paragraphs" class="chapter-navbar-link"><a href="chapters/#{{para.paragraph_id}}">{{ para.summary }}<a></li>
+						</ul>
 					</li>
-					<!-- Same for Group B & C -->
 				</ul>
-			</nav>
-			<div class="col-xs-9" id="content">
-				<section ng-repeat="doc in chapter.editions" id="{{doc.chapter_number}}" class="group text-justify">
-					<h3>{{doc.chapter_title}}</h1>
-					<div class="subgroup">
+			</div>
+			<div class="col-xs-8" class="content">
+				<section class="group">
+					<h1>Volume One</h1>
+					<div ng-repeat="doc in chapter.editions" class="subgroup">
+						<h3 id="{{doc.chapter_number}}">{{doc.chapter_title}}</h1>
 						<blockquote>
 							<p ng-bind-html="doc.epigraph.quote"></p>
 							<p>- {{ doc.epigraph.bibl }}</p>
