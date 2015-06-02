@@ -15,7 +15,7 @@ angular.module('app.routes', ['ngRoute'])
 
 	.when('/biography', {
 		templateUrl : 'app/views/biography.html',
-		controller: 'chapterCtrl'
+		controller: 'chapterController as chapter'
 	})
 
 	// get rid of the hash in the URL

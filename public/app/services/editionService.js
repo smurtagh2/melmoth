@@ -19,6 +19,15 @@ angular.module('editionService', [])
 		return $http.get('/edition/text/');
 	};
 
+	editionFactory.chapters = function() {
+		return $http.get('edition/chapter_data')
+	}
+
+	editionFactory.biography = function() {
+		return $http.get('edition/biography_data')
+	}
+
+
 	// return our entire userFactory object
 	return editionFactory;
 

@@ -16,13 +16,13 @@ module.exports = function(app, express) {
 
 	apiRouter.route('/text')
 
-	.get(function(req, res) {
-		Edition.find(function(err, chapters) {
-			if (err) res.send(err);
-			// return the text
-			res.json(chapters);
-		})
-	})
+		.get(function(req, res) {
+			Edition.find(function(err, all_text) {
+				if (err) res.send(err);
+				// return the text
+				res.json(all_text);
+			})
+		});
 
 	apiRouter.route('/paragraphs')
 
@@ -32,6 +32,24 @@ module.exports = function(app, express) {
 				{ paragraphs: 1 }, function(err, editions) {
 
 				res.json(editions);
+			});
+		});
+
+	apiRouter.route('/chapter_data')
+
+		.get(function(req, res) {
+			Edition.find({ 'chapter_type': 'chapter'}, function(err, chapters) {
+
+				res.json(chapters);
+			});
+		});
+
+	apiRouter.route('/biography_data')
+
+		.get(function(req, res) {
+			Edition.find({ 'chapter_type': 'biography'}, function(err, biography) {
+
+				res.json(biography);
 			});
 		});
 

@@ -1,3 +1,10 @@
-<div>
-	<p>PLACEHOLDER FOR BIOGRAPHY</p>
+<div class="row">
+	<div class="col-xs-10" id="content">
+		<section ng-repeat="doc in chapter.biography" id="{{doc.chapter_number}}" class="group text-justify">
+			<h3>{{doc.chapter_title}}</h1>
+			<div class="subgroup">
+				<p ng-repeat="para in doc.paragraphs" ng-bind-html="para.text" id="{{para.paragraph_id}}"></p>
+			</div>
+		</section>
+	</div>
 </div>

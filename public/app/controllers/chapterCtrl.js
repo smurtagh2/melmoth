@@ -16,6 +16,18 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll'])
 			self.paragraphs = data;
 		});
 
+  Edition.chapters()
+
+    .success(function(data){
+      self.chapters = data;
+    });
+
+  Edition.biography()
+
+    .success(function(data){
+      self.biography = data;
+    });
+
 })
 
 .filter('highlight', function($sce) {
