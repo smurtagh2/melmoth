@@ -1,0 +1,25 @@
+<div class="row">
+	<nav class="col-xs-3 bs-docs-sidebar"> 
+		<ul id="sidebar" class="nav nav-stacked fixed">
+			<li ng-repeat="doc in chapter.editions" du-scrollspy="{{doc.chapter_number}}">
+				<a href="#{{doc.chapter_number}}" du-smooth-scroll>{{doc.chapter_title}}</a>
+				<ul class="nav nav-stacked summaries">
+					<li ng-repeat="para in doc.paragraphs" du-scrollspy="{{para.paragraph_id}}"><a href="#{{para.paragraph_id}}" du-smooth-scroll>{{para.summary}}</a></li>
+				</ul>
+			</li>
+			<!-- Same for Group B & C -->
+		</ul>
+	</nav>
+	<div class="col-xs-9" id="content">
+		<section ng-repeat="doc in chapter.editions" id="{{doc.chapter_number}}" class="group text-justify">
+			<h3>{{doc.chapter_title}}</h1>
+			<div class="subgroup">
+				<blockquote>
+					<p ng-bind-html="doc.epigraph.quote"></p>
+					<p>- {{ doc.epigraph.bibl }}</p>
+				</blockquote>
+				<p ng-repeat="para in doc.paragraphs" ng-bind-html="para.text" id="{{para.paragraph_id}}"></p>
+			</div>
+		</section>
+	</div>
+</div>

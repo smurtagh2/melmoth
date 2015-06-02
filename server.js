@@ -36,12 +36,8 @@ app.use('/edition', editionRoutes);
 
 // set up our one route to the index.html file
 
-app.get('/chapters', function(req, res) {
-	res.sendFile(path.join(__dirname + '/public/app/views/chapterPages.html'))
-});
-
 app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname + '/public/app/views/index.html'))
+	res.sendFile(path.join(__dirname + '/public/app/index.html'))
 });
 
 
