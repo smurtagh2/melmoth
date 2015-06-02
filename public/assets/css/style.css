@@ -37,6 +37,9 @@ body {
 .fixed {
     position: fixed;
     width:300px;
+	overflow: auto;
+	height:500px;
+}
 }
 
 /* sidebar */
@@ -85,11 +88,3 @@ body {
     font-weight: 500;
 }
 
-/* hide inactive nested list */
-.bs-docs-sidebar .nav ul.nav {
-    display: none;           
-}
-/* show active nested list */
-.bs-docs-sidebar .nav>.active>ul.nav {
-    display: block;           
-}
