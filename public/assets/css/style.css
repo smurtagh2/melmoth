@@ -68,23 +68,46 @@ body {
 
 /* active & hover links */
 .bs-docs-sidebar .nav>.active>a, 
-.bs-docs-sidebar .nav>li>a:hover, 
-.bs-docs-sidebar .nav>li>a:focus {
+.bs-docs-sidebar .nav>li>a:hover {
     color: #563d7c;                 
     text-decoration: none;          
     background-color: transparent;  
     border-left-color: #563d7c; 
+}
+
+.bs-docs-sidebar .nav>li>a:focus { /* fixes bug where link stays active when clicked, even when scrolling away from active div */
+	background-color: transparent;  
 }
 /* all active links */
 .bs-docs-sidebar .nav>.active>a, 
 .bs-docs-sidebar .nav>.active:hover>a,
 .bs-docs-sidebar .nav>.active:focus>a {
     font-weight: 700;
-}
-/* nested active links */
-.bs-docs-sidebar .nav .nav>.active>a, 
-.bs-docs-sidebar .nav .nav>.active:hover>a,
-.bs-docs-sidebar .nav .nav>.active:focus>a {
-    font-weight: 500;
+    font-size: 20px;
 }
 
+
+.test{
+	color:red;
+}
+
+.paratext_title{
+	text-align: center;
+	margin-bottom: 20px;
+	text-decoration: underline;
+}
+
+img.endnote_image{
+	max-width:60%;
+	max-height:100%;
+}
+
+div.endnote_content{
+	text-align: center;
+}
+
+/* when hiding the picture */
+.ng-hide-add         { animation:0.5s lightSpeedOut ease; }
+
+/* when showing the picture */
+.ng-hide-remove      { animation:0.5s flipInX ease; }

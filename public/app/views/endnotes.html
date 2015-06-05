@@ -1,0 +1,10 @@
+<section class="row">
+	<div ng-repeat="endnote in chapter.endnotes" class="col-xs-8 col-xs-offset-2 well endnote_content">
+		<h4>{{endnote.keyword}}</h3>
+		<hr/>
+		<p>{{endnote.endnote_text}}</p>
+		<hr/>
+		<img src="{{endnote.image_url}}" class="endnote_image">
+	</div>
+</section>
+{{chapter.keywords}}

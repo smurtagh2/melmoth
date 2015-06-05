@@ -27,6 +27,9 @@ angular.module('editionService', [])
 		return $http.get('edition/biography_data')
 	}
 
+	editionFactory.endnotes = function() {
+		return $http.get('edition/endnotes')
+	}
 
 	// return our entire userFactory object
 	return editionFactory;

@@ -1,9 +1,9 @@
 <div class="row">
-	<div class="col-xs-10" id="content">
+	<div class="col-xs-10 col-xs-offset-1" id="content">
 		<section ng-repeat="doc in chapter.biography" id="{{doc.chapter_number}}" class="group text-justify">
-			<h3>{{doc.chapter_title}}</h1>
+			<h2 class="paratext_title">{{doc.chapter_title}}</h1>
 			<div class="subgroup">
-				<p ng-repeat="para in doc.paragraphs" ng-bind-html="para.text" id="{{para.paragraph_id}}"></p>
+				<p ng-repeat="para in doc.paragraphs" ng-bind-html="para.text" id="{{para.paragraph_id}}" class="para"></p>
 			</div>
 		</section>
 	</div>

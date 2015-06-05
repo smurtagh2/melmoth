@@ -1,4 +1,4 @@
-angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll'])
+angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll','ui.bootstrap', 'ngAnimate'])
 
 .controller('chapterController', function(Edition){
 
@@ -20,6 +20,10 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll'])
 
     .success(function(data){
       self.chapters = data;
+      self.chapters.myVar = true;
+      self.chapters.toggle = function() {
+        self.chapters.myVar = !self.chapters.myVar;
+      }
     });
 
   Edition.biography()
@@ -27,6 +31,13 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll'])
     .success(function(data){
       self.biography = data;
     });
+
+  Edition.endnotes()
+
+    .success(function(data){
+      self.endnotes = data;
+      self.keywords = data.keyword;
+    })
 
 })
 
@@ -37,4 +48,23 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll'])
 
       return $sce.trustAsHtml(text)
     }
+})
+
+.filter('red', function($sce) {
+    return function(text, phrase) {
+      if (phrase) text = text.replace(new RegExp('('+phrase+')', 'gi'),
+        '<a href="#" tooltip-placement="top" tooltip="This is a test">$1</a>')
+
+      return $sce.trustAsHtml(text)
+    }
+})
+
+.directive('ngEndnote', function(){
+  return {
+    restrict: 'E',
+    scope:{
+      endnoteInfo: '=info'
+    },
+    template: 'Keyword: {{endnoteInfo.keyword}}'
+  }
 });
