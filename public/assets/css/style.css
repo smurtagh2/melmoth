@@ -1,6 +1,7 @@
 .para{
 	color: black;
 	text-indent: 50px;
+	font-size: 18px;
 }
 
 .note{
@@ -29,6 +30,11 @@ body {
 
 .chapter-navbar-link{
 	margin:0px;
+}
+
+.endnote_button{
+	white-space: normal;
+	margin-bottom: 5px; 
 }
 
 
@@ -103,11 +109,33 @@ img.endnote_image{
 }
 
 div.endnote_content{
-	text-align: center;
+	text-align: justify;
 }
 
-/* when hiding the picture */
-.ng-hide-add         { animation:0.5s lightSpeedOut ease; }
+.notes_button{
+	margin-bottom: 20px;
+}
 
-/* when showing the picture */
-.ng-hide-remove      { animation:0.5s flipInX ease; }
+
+
+/*
+ * Row with equal height columns http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css
+ * --------------------------------------------------
+ */
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+
+
+.sample-show-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.sample-show-hide.ng-hide {
+  opacity:0;
+}

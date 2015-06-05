@@ -39,6 +39,7 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll','ui.bo
       self.keywords = data.keyword;
     })
 
+    self.username = 'Shane Murtagh';
 })
 
 .filter('highlight', function($sce) {
@@ -57,6 +58,13 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll','ui.bo
 
       return $sce.trustAsHtml(text)
     }
+})
+
+.filter('test', function () {
+  return function (paragraph, phrase) {
+      if (phrase) paragraph = paragraph.replace(new RegExp('('+paragraph+')', 'gi'),
+        '<a href="#" tooltip-placement="top" tooltip="This is a test">$1</a>')
+  };
 })
 
 .directive('ngEndnote', function(){
