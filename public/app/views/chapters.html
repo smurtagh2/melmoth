@@ -1,18 +1,18 @@
+<div ng-include="'app/views/pagination.html'"></div>
 <div class="row">
 	<nav class="col-xs-2 bs-docs-sidebar"> 
 		<ul id="sidebar" class="nav nav-stacked fixed">
 			<!--<button type="button" class="btn btn-primary notes_button" ng-click="chapter.chapters.toggle()">Toggle Notes</button>-->
-			<li ng-repeat="doc in chapter.chapters" du-scrollspy="{{doc.chapter_number}}">
-				<a href="#{{doc.chapter_number}}" du-smooth-scroll>{{doc.chapter_title}}</a>
+			<li ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'" du-scrollspy="{{doc.chapter_id}}">
+				<a href="#{{doc.chapter_id}}" du-smooth-scroll>{{doc.chapter_title}}</a>
 				<!-- <ul class="nav nav-stacked summaries">
 					<li ng-repeat="para in doc.paragraphs" du-scrollspy="{{para.paragraph_id}}"><a href="#{{para.paragraph_id}}" du-smooth-scroll>{{para.summary}}</a></li>
 				</ul> -->
 			</li>
-			<!-- Same for Group B & C -->
 		</ul>
 	</nav>
 	<div class="col-xs-10" id="content">
-		<section ng-repeat="doc in chapter.chapters" id="{{doc.chapter_number}}" class="group text-justify">
+		<section ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'" id="{{doc.chapter_id}}" class="group text-justify">
 			<h3>{{doc.chapter_title}}</h1>
 			<div class="subgroup">
 				<blockquote>
@@ -21,10 +21,11 @@
 				</blockquote>
 				<div ng-repeat="para in doc.paragraphs | filter:searchText" class="row">
 					<div class="col-xs-10">
-						<p class="para" ng-bind-html="para.text | highlight:searchText" id="{{para.paragraph_id}}"></p>
+						<p class="para" ng-bind-html="para.text | filter:chapter.endnotes" id="{{para.paragraph_id}}"></p>
 					</div>
 					<div class="col-xs-2 endnote_content">
-						<button ng-repeat="endnote in para.editors_notes" class="btn btn-primary btn-block endnote_button" popover="content">{{endnote.keyword}}</button>
+						<button ng-repeat="endnote in para.editors_notes" class="btn btn-primary btn-block endnote_button" popover-placement="left" popover-title="{{endnote.keyword}}" popover="{{endnote.endnote_text}}">{{endnote.keyword}}</button>
+						<button ng-repeat="footnote in para.authors_notes" class="btn btn-success btn-block endnote_button" popover-placement="left" popover-title-ng-bind-html="{{footnote.keyword}}" popover="{{footnote.footnote_text}}" ng-bind-html="footnote.keyword"></button>
 					</div>
 					<!--<div class="col-xs-2 endnote_content sample-show-hide" ng-hide="chapter.chapters.myVar">
 						<button ng-repeat="endnote in para.editors_notes" class="btn btn-primary btn-block endnote_button" popover="content">{{endnote.keyword}}</button>

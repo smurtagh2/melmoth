@@ -2,6 +2,7 @@ var Edition = require('../models/edition')
 var Endnote = require('../models/endnote_model')
 var Alt = require('../models/alt_model')
 var User = require('../models/user')
+var Vis = require('../models/visualisation')
 var config = require('../../config')
 
 module.exports = function(app, express) {
@@ -74,6 +75,15 @@ module.exports = function(app, express) {
 				if (err) res.send(err);
 
 				res.send('Endnote created!')
+			});
+		});
+
+	apiRouter.route('/vis_data')
+
+		.get(function(req, res) {
+			Vis.find(function(err, vis) {
+	
+				 res.json(vis)
 			});
 		});
 

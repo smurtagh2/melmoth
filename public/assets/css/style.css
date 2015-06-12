@@ -26,6 +26,7 @@
 
 body {
 	position: relative;
+  /*background-image: url("http://orig15.deviantart.net/a11f/f/2014/243/6/3/charles_r__maturin_by_bnoy-d7xgefq.jpg");*/
 }
 
 .chapter-navbar-link{
@@ -37,15 +38,26 @@ body {
 	margin-bottom: 5px; 
 }
 
+.home_bio_content{
+  font-size: 16px;
+  line-height: 1.5em;
+  padding:20px;
+  text-align: justify;
+}
 
+#home_tabs{
+  border: 1px solid gray;
+}
+
+.home_tabs_image{
+  padding:20px;
+}
 /* sidebar */
 
 .fixed {
     position: fixed;
-    width:300px;
 	overflow: auto;
 	height:500px;
-}
 }
 
 /* sidebar */
@@ -89,8 +101,7 @@ body {
 .bs-docs-sidebar .nav>.active:hover>a,
 .bs-docs-sidebar .nav>.active:focus>a {
     font-weight: 700;
-    font-size: 20px;
-}
+  }
 
 
 .test{
@@ -118,6 +129,7 @@ div.endnote_content{
 
 
 
+
 /*
  * Row with equal height columns http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css
  * --------------------------------------------------
@@ -138,4 +150,20 @@ div.endnote_content{
 
 .sample-show-hide.ng-hide {
   opacity:0;
+}
+
+.activeClass{
+	background-color: red;
+}
+
+/* D3JS */
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
 }
