@@ -46,7 +46,7 @@ body {
 }
 
 #home_tabs{
-  border: 1px solid gray;
+  margin-bottom: 20px;
 }
 
 .home_tabs_image{
@@ -158,12 +158,16 @@ div.endnote_content{
 
 /* D3JS */
 
-.node {
-  stroke: #fff;
-  stroke-width: 1.5px;
+.link {
+  stroke: #ccc;
 }
 
-.link {
-  stroke: #999;
-  stroke-opacity: .6;
+.node text {
+  pointer-events: none;
+  font: 10px sans-serif;
+}
+
+d3-tip {
+    line-height: 1;
+    color: black;
 }

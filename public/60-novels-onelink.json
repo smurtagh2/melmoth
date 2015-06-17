@@ -1,0 +1,442 @@
+{
+	"nodes": [{
+		"name": "Sedley - A Winter in Dublin",
+		"group": 5
+	}, {
+		"name": "Edgeworth - Absentee",
+		"group": 1
+	}, {
+		"name": "Anon -The Adventurers",
+		"group": 1
+	}, {
+		"name": "Banim - Nowlans",
+		"group": 1
+	}, {
+		"name": "Banim - The Boyne Water",
+		"group": 1
+	}, {
+		"name": "Banim - The Anglo-Irish",
+		"group": 1
+	}, {
+		"name": "Banim - The Croppy",
+		"group": 1
+	}, {
+		"name": "Barrett - The Heroine",
+		"group": 1
+	}, {
+		"name": "Bunbury - Cabin Conversations",
+		"group": 1
+	}, {
+		"name": "Edgeworth - Castle Rackrent",
+		"group": 1
+	}, {
+		"name": "Gamble - Charlton",
+		"group": 1
+	}, {
+		"name": "Griffin - Collegians",
+		"group": 1
+	}, {
+		"name": "Leadbetter - Cottage Dialogues",
+		"group": 1
+	}, {
+		"name": "Edgeworth-Belinda",
+		"group": 1
+	}, {
+		"name": "Edgeworth-Ormond",
+		"group": 1
+	}, {
+		"name": "Carelton - Father Butler",
+		"group": 1
+	}, {
+		"name": "Morgan - Florence Macarthy",
+		"group": 1
+	}, {
+		"name": "Lamb - Glenarvon",
+		"group": 1
+	}, {
+		"name": "Griffin - Holland-tide",
+		"group": 1
+	}, {
+		"name": "Griffin - Munster Festivals",
+		"group": 1
+	}, {
+		"name": "Griffin - The Invasion",
+		"group": 1
+	}, {
+		"name": "Porter - Honor O'Hara",
+		"group": 1
+	}, {
+		"name": "Croker - Legends of the lakes",
+		"group": 1
+	}, {
+		"name": "Lever - Tom Burke",
+		"group": 1
+	}, {
+		"name": "Higginson - Manderville",
+		"group": 3
+	}, {
+		"name": "Godwin - Mandeville",
+		"group": 5
+	}, {
+		"name": "Parnell - Maurice and Berghetta",
+		"group": 5
+	}, {
+		"name": "Maturin - Melmoth",
+		"group": 2
+	}, {
+		"name": "Moore - Captain Rock",
+		"group": 6
+	}, {
+		"name": "Moore - The Epicurean",
+		"group": 2
+	}, {
+		"name": "Moore - Travels of anIrish Gentleman",
+		"group": 5
+	}, {
+		"name": "Morgan - O'Donnell",
+		"group": 1
+	}, {
+		"name": "McHenry - O'Halloran",
+		"group": 5
+	}, {
+		"name": "Maxwell - O'Hara; or 1798",
+		"group": 1
+	}, {
+		"name": "Morgan - The Wild Irish Girl",
+		"group": 6
+	}, {
+		"name": "Hall - Sketches of Irish Character",
+		"group": 1
+	}, {
+		"name": "Leadbetter - Tales for cottagers",
+		"group": 1
+	}, {
+		"name": "LeFanu(Alicia) - Tales of a tourist",
+		"group": 1
+	}, {
+		"name": "Bunbury - The Abbey of Innismoyle",
+		"group": 1
+	}, {
+		"name": "Peack - The Bard of the West",
+		"group": 2
+	}, {
+		"name": "Roche - The Children of the Abbey",
+		"group": 1
+	}, {
+		"name": "Ennis - The Contested Election",
+		"group": 3
+	}, {
+		"name": "Kelly - The Fatalists",
+		"group": 4
+	}, {
+		"name": "McHenry - The Hearts of Steel",
+		"group": 5
+	}, {
+		"name": "MacDonnell - ThehermitofGlenconella-EneasMacDonnell",
+		"group": 5
+	}, {
+		"name": "Lucas - The Infernal Quixote",
+		"group": 5
+	}, {
+		"name": "Colpoys - The Irish Excursion",
+		"group": 1
+	}, {
+		"name": "Marshal - The Irish Necromancer",
+		"group": 1
+	}, {
+		"name": "Wilson - The Irish Valet",
+		"group": 1
+	}, {
+		"name": "Porter - The Lake o fKillarney",
+		"group": 1
+	}, {
+		"name": "Kelly - The Matron of Erin",
+		"group": 4
+	}, {
+		"name": "Maturin - The Milesian Chief",
+		"group": 2
+	}, {
+		"name": "Morgan - The O'Briens and the O'Flahertys",
+		"group": 1
+	}, {
+		"name": "Purcell - The Orientalist",
+		"group": 1
+	}, {
+		"name": "Harding The Refugees",
+		"group": 1
+	}, {
+		"name": "Tonna - The Rockite",
+		"group": 1
+	}, {
+		"name": "Torrens - The Victim of Intolerance",
+		"group": 1
+	}, {
+		"name": "Maturin - The Wild Irish Boy",
+		"group": 1
+	}, {
+		"name": "McKenzie - The Irish Guardian",
+		"group": 3
+	}, {
+		"name": "Crowe - To-day in Ireland",
+		"group": 1
+	}, {
+		"name": "centre",
+		"group": 1
+	}, {
+		"name": "gothic",
+		"group": 2
+	}, {
+		"name": "people/family/home",
+		"group": 3
+	}, {
+		"name": "romantic",
+		"group": 4
+	}, {
+		"name": "time/place",
+		"group": 5
+	}, {
+		"name": "ireland",
+		"group": 6
+	}],
+	"links": [{
+		"source": 0,
+		"target": 64,
+		"weight": 0.187331469
+	}, {
+		"source": 1,
+		"target": 60,
+		"weight": 0.25426413
+	}, {
+		"source": 2,
+		"target": 60,
+		"weight": 0.229812743
+	}, {
+		"source": 3,
+		"target": 60,
+		"weight": 0.36768973
+	}, {
+		"source": 4,
+		"target": 60,
+		"weight": 0.282979088
+	}, {
+		"source": 5,
+		"target": 60,
+		"weight": 0.303006989
+	}, {
+		"source": 6,
+		"target": 60,
+		"weight": 0.244601237
+	}, {
+		"source": 7,
+		"target": 60,
+		"weight": 0.329436494
+	}, {
+		"source": 8,
+		"target": 60,
+		"weight": 0.415770542
+	}, {
+		"source": 9,
+		"target": 60,
+		"weight": 0.247160798
+	}, {
+		"source": 10,
+		"target": 60,
+		"weight": 0.297977485
+	}, {
+		"source": 11,
+		"target": 60,
+		"weight": 0.367738453
+	}, {
+		"source": 12,
+		"target": 60,
+		"weight": 0.173237884
+	}, {
+		"source": 13,
+		"target": 60,
+		"weight": 0.29066327
+	}, {
+		"source": 14,
+		"target": 60,
+		"weight": 0.275301287
+	}, {
+		"source": 15,
+		"target": 60,
+		"weight": 0.260795478
+	}, {
+		"source": 16,
+		"target": 60,
+		"weight": 0.221802858
+	}, {
+		"source": 17,
+		"target": 60,
+		"weight": 0.265669009
+	}, {
+		"source": 18,
+		"target": 60,
+		"weight": 0.365465743
+	}, {
+		"source": 19,
+		"target": 60,
+		"weight": 0.344885446
+	}, {
+		"source": 20,
+		"target": 60,
+		"weight": 0.246155553
+	}, {
+		"source": 21,
+		"target": 60,
+		"weight": 0.317367386
+	}, {
+		"source": 22,
+		"target": 60,
+		"weight": 0.243269327
+	}, {
+		"source": 23,
+		"target": 60,
+		"weight": 0.331981041
+	}, {
+		"source": 24,
+		"target": 62,
+		"weight": 0.277453402
+	}, {
+		"source": 25,
+		"target": 64,
+		"weight": 0.241389668
+	}, {
+		"source": 26,
+		"target": 64,
+		"weight": 0.292221428
+	}, {
+		"source": 27,
+		"target": 61,
+		"weight": 0.508237397
+	}, {
+		"source": 28,
+		"target": 65,
+		"weight": 0.459724675
+	}, {
+		"source": 29,
+		"target": 61,
+		"weight": 0.324395078
+	}, {
+		"source": 30,
+		"target": 64,
+		"weight": 0.123400997
+	}, {
+		"source": 31,
+		"target": 60,
+		"weight": 0.223304252
+	}, {
+		"source": 32,
+		"target": 64,
+		"weight": 0.275772817
+	}, {
+		"source": 33,
+		"target": 60,
+		"weight": 0.234726344
+	}, {
+		"source": 34,
+		"target": 65,
+		"weight": 0.236770774
+	}, {
+		"source": 35,
+		"target": 60,
+		"weight": 0.333737778
+	}, {
+		"source": 36,
+		"target": 60,
+		"weight": 0.165600012
+	}, {
+		"source": 37,
+		"target": 60,
+		"weight": 0.216826996
+	}, {
+		"source": 38,
+		"target": 60,
+		"weight": 0.331625136
+	}, {
+		"source": 39,
+		"target": 61,
+		"weight": 0.303249331
+	}, {
+		"source": 40,
+		"target": 60,
+		"weight": 0.218242779
+	}, {
+		"source": 41,
+		"target": 62,
+		"weight": 0.272452251
+	}, {
+		"source": 42,
+		"target": 63,
+		"weight": 0.376004352
+	}, {
+		"source": 43,
+		"target": 64,
+		"weight": 0.256220811
+	}, {
+		"source": 44,
+		"target": 64,
+		"weight": 0.230740737
+	}, {
+		"source": 45,
+		"target": 64,
+		"weight": 0.393406137
+	}, {
+		"source": 46,
+		"target": 60,
+		"weight": 0.211738843
+	}, {
+		"source": 47,
+		"target": 60,
+		"weight": 0.209884915
+	}, {
+		"source": 48,
+		"target": 60,
+		"weight": 0.222635916
+	}, {
+		"source": 49,
+		"target": 60,
+		"weight": 0.349151152
+	}, {
+		"source": 50,
+		"target": 63,
+		"weight": 0.539744681
+	}, {
+		"source": 51,
+		"target": 61,
+		"weight": 0.524083761
+	}, {
+		"source": 52,
+		"target": 60,
+		"weight": 0.190799697
+	}, {
+		"source": 53,
+		"target": 60,
+		"weight": 0.187474521
+	}, {
+		"source": 54,
+		"target": 60,
+		"weight": 0.271531456
+	}, {
+		"source": 55,
+		"target": 60,
+		"weight": 0.222908811
+	}, {
+		"source": 56,
+		"target": 60,
+		"weight": 0.247532247
+	}, {
+		"source": 57,
+		"target": 60,
+		"weight": 0.241846003
+	}, {
+		"source": 58,
+		"target": 62,
+		"weight": 0.490982199
+	}, {
+		"source": 59,
+		"target": 60,
+		"weight": 0.222577996
+	}]
+}
