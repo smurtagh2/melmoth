@@ -1,0 +1,11 @@
+<nav class="col-xs-2 bs-docs-sidebar"> 
+	<ul id="sidebar" class="nav nav-stacked fixed">
+		<!--<button type="button" class="btn btn-primary notes_button" ng-click="chapter.chapters.toggle()">Toggle Notes</button>-->
+		<li ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'" du-scrollspy="{{doc.chapter_id}}">
+			<a href="#{{doc.chapter_id}}" du-smooth-scroll>{{doc.chapter_title}}</a>
+			<!-- <ul class="nav nav-stacked summaries">
+				<li ng-repeat="para in doc.paragraphs" du-scrollspy="{{para.paragraph_id}}"><a href="#{{para.paragraph_id}}" du-smooth-scroll>{{para.summary}}</a></li>
+			</ul> -->
+		</li>
+	</ul>
+</nav>

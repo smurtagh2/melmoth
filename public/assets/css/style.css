@@ -52,6 +52,15 @@ body {
 .home_tabs_image{
   padding:20px;
 }
+
+.scroll-tab{
+  margin-bottom: 50px;
+}
+
+#intro-title{
+  text-align: center;
+}
+
 /* sidebar */
 
 .fixed {
@@ -112,6 +121,10 @@ body {
 	text-align: center;
 	margin-bottom: 20px;
 	text-decoration: underline;
+}
+
+.image_footer{
+  text-align: center;
 }
 
 img.endnote_image{

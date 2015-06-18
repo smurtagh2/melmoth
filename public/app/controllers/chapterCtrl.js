@@ -6,7 +6,7 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
 
   $http.get('miserables.json').success(function(data) {
    self.viz_data = data;
-});
+  });
 
 
   Edition.vis_data()
