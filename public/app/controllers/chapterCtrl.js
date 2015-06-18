@@ -5,7 +5,11 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
   var self = this;
 
   $http.get('miserables.json').success(function(data) {
-   self.viz_data = data;
+    self.viz_data = data;
+  });
+
+  $http.get('melmoth-tree.json').success(function(data) {
+    self.tree_data = data;
   });
 
 
@@ -95,7 +99,9 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
   }
 })
 
-.directive( 'crD3Bars', [
+
+
+/*.directive( 'crD3Bars', [
   function () {
     return {
       restrict: 'E',
@@ -196,5 +202,5 @@ force.on("tick", function () {
           }, true);  
         }
     };
-  }
-]);
+}
+]);*/

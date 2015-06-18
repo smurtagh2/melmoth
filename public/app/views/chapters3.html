@@ -1,0 +1,57 @@
+<div class="row scroll-tab">
+	<div class="col-xs-2 col-xs-offset-5">
+		<a href="chapters" class="btn btn-info" role="button">Tab View</a>
+	</div>
+<div>
+<div class="row">
+	<nav class="col-xs-2 bs-docs-sidebar"> 
+		<ul id="sidebar" class="nav nav-stacked fixed">
+			<li ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'" du-scrollspy="{{doc.chapter_id}}">
+				<a href="#{{doc.chapter_id}}" du-smooth-scroll>{{doc.chapter_title}}</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="col-xs-10" id="content">
+		<section ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'" id="{{doc.chapter_id}}" class="group text-justify">
+			<h3>{{doc.chapter_title}}</h1>
+			<div class="subgroup">
+				<blockquote>
+					<p ng-bind-html="doc.epigraph.quote"></p>
+					<p>- {{ doc.epigraph.bibl }}</p>
+				</blockquote>
+				<div ng-repeat="para in doc.paragraphs | filter:searchText" class="row">
+					<div class="col-xs-8">
+						<p class="para" ng-bind-html="para.text | highlight:searchText" id="{{para.paragraph_id}}"></p>
+					</div>
+					<!--<accordion class="col-xs-4 endnote_content">
+						<accordion-group ng-repeat="endnote in para.editors_notes" heading="{{endnote.keyword}}"  class="panel panel-primary endnote_content" id="{{endnote.endnote_id}}">
+							<div class="panel-body">
+								<p>{{endnote.endnote_text}}</p>
+							</div>
+							<div class="panel-footer image_footer">
+								<img src="{{endnote.image_url}}" class="endnote_image">
+							</div>
+						</accordion-group>
+					</accordion>-->
+						<!--<button ng-repeat="endnote in para.editors_notes" class="btn btn-primary btn-block endnote_button" popover-placement="left" popover-title="{{endnote.keyword}}" popover="{{endnote.endnote_text}}">{{endnote.keyword}}</button>
+						<button ng-repeat="footnote in para.authors_notes" class="btn btn-success btn-block endnote_button" popover-placement="left" popover-title-ng-bind-html="{{footnote.keyword}}" popover="{{footnote.footnote_text}}" ng-bind-html="footnote.keyword"></button>-->
+				</div>
+					<!--<div class="col-xs-2 endnote_content sample-show-hide" ng-hide="chapter.chapters.myVar">
+						<button ng-repeat="endnote in para.editors_notes" class="btn btn-primary btn-block endnote_button" popover="content">{{endnote.keyword}}</button>
+					</div>-->
+			</div>
+		</section>
+	</div>
+</div>
+	<!--<div ng-repeat="endnote in chapter.endnotes" class="col-xs-2 panel panel-primary endnote_content" id="{{endnote.endnote_id}}">
+		<div class="panel-heading">
+			<h5>{{endnote.keyword}}</h5>
+		</div>
+		<div class="panel-body">
+			<p>{{endnote.endnote_text}}</p>
+		</div>
+		<div class="panel-footer">
+			<img src="{{endnote.image_url}}" class="endnote_image">
+		</div>
+	</div>-->
+</div>

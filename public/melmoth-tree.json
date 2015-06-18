@@ -1,0 +1,21 @@
+{
+  "name": "novel",
+  "children": [{
+    "name": "Frame Narrative",
+    "children": [{
+      "name": "Stanton's Tale"
+    }, {
+      "name": "Spaniard's Tale",
+      "children": [{
+        "name": "Tale of the Indians",
+        "children": [{
+          "name": "Tale of Guzman's Family"
+        }, {
+          "name": "Lover's Tale"
+        }]
+      }]
+    }, {
+      "name": "The Wanderer's Dream"
+    }]
+  }]
+}
