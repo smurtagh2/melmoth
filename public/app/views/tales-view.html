@@ -1,11 +1,7 @@
 <div class="row">
 	<tabset>
 		<tab ng-repeat="tale in chapter.complete_tales" heading="{{tale.title}}">
-			<div>
-				<a href="" class="btn btn-info" role="button">Introduction</a>
-				<a href="" class="btn btn-info" role="button">Characters</a>
-			</div>
-			<h2 ng-bind-html="tale.title"></h2>
+			<h3 ng-bind-html="tale.title"></h3>
 			<p ng-repeat="para in tale.paragraphs" class="para" ng-bind-html="para.text"></p>
 		</tab>
 	</tabset>
