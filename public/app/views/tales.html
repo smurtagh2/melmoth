@@ -1,0 +1,9 @@
+<div class="row" ng-repeat="tales in chapter.tales_data">
+	<h2>TALES</h2>
+	<div class="col-xs-6" ng-repeat="tale in tales.tales">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">{{tale.title}}</div>
+		  <div class="panel-body">{{tale.description}}</div>
+		</div>
+	</div>
+</div>

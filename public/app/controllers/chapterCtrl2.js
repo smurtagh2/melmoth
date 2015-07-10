@@ -1,6 +1,6 @@
-angular.module('d3Dir', [])
+angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.bootstrap', 'ngAnimate'])
 
-.controller('vizController', function(Edition, $http) {
+.controller('chapterController', function(Edition, $http) {
 
   var self = this;
 
@@ -11,9 +11,97 @@ angular.module('d3Dir', [])
   $http.get('melmoth-tree.json').success(function(data) {
     self.tree_data = data;
   });
+
+
+  Edition.vis_data()
+
+  .success(function(data) {
+    self.vis_data = data;
+  });
+
+  Edition.all()
+
+  .success(function(data) {
+    self.editions = data;
+  });
+
+  Edition.paragraphs()
+
+  .success(function(data) {
+    self.paragraphs = data;
+  });
+
+  Edition.chapters()
+
+  .success(function(data) {
+    self.chapters = data;
+    self.chapters.myVar = true;
+    self.chapters.toggle = function() {
+      self.chapters.myVar = !self.chapters.myVar;
+    }
+  });
+
+
+  Edition.biography()
+
+  .success(function(data) {
+    self.biography = data;
+  });
+
+  Edition.endnotes()
+
+  .success(function(data) {
+    self.endnotes = data;
+    self.keywords = data.keyword;
+  })
+
+  self.username = 'Shane Murtagh';
 })
 
-.directive( 'd3Directive', [
+.filter('highlight', function($sce) {
+  return function(text, phrase) {
+    if (phrase) text = text.replace(new RegExp('(' + phrase + ')', 'gi'),
+      '<span class="highlighted">$1</span>')
+
+    return $sce.trustAsHtml(text)
+  }
+})
+
+.filter('red', function($sce) {
+  return function(text, phrase) {
+    if (phrase) text = text.replace(new RegExp('(' + phrase + ')', 'gi'),
+      '<a href="#" tooltip-placement="top" tooltip="This is a test">$1</a>')
+
+    return $sce.trustAsHtml(text)
+  }
+})
+
+.filter('test', function() {
+  return function(paragraph, phrase) {
+    if (phrase) paragraph = paragraph.replace(new RegExp('(' + paragraph + ')', 'gi'),
+      '<a href="#" tooltip-placement="top" tooltip="This is a test">$1</a>')
+  };
+})
+
+.filter('test', function() {
+  return function(input, scope) {
+    if (input === scope.test_array) input = input.replace(new RegExp('(' + input + ')', 'gi'),
+      '<a href="#" tooltip-placement="bottom" tooltip="{{scope.test_array}}">$1</a>')
+  };
+})
+
+.filter('getNote', function() { //http://stackoverflow.com/questions/14302267/how-to-use-a-filter-in-a-controller
+  return function(input, notes) {
+    for (var i = 0; i < notes.length; i++) {
+      if (notes[i].keywords == input) input = input.replace(new RegExp('(' + input + ')', 'gi'),
+        '<a href="#" tooltip-placement="bottom" tooltip="{{' + notes[i].endnote_text + '}}">$1</a>')
+    }
+  }
+})
+
+
+
+/*.directive( 'crD3Bars', [
   function () {
     return {
       restrict: 'E',
@@ -114,5 +202,5 @@ force.on("tick", function () {
           }, true);  
         }
     };
-  }
-]);
+}
+]);*/

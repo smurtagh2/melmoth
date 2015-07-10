@@ -1,1 +1,1 @@
-angular.module('melmothApp', ['chapterCtrl', 'editionService', 'ngSanitize', 'app.routes', 'duScroll', 'ui.bootstrap', 'ngAnimate'])
+angular.module('melmothApp', ['chapterCtrl', 'd3Dir', 'editionService', 'ngSanitize', 'app.routes', 'duScroll', 'ui.bootstrap', 'ngAnimate'])

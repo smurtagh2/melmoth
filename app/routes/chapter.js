@@ -3,6 +3,8 @@ var Endnote = require('../models/endnote_model')
 var Alt = require('../models/alt_model')
 var User = require('../models/user')
 var Vis = require('../models/visualisation')
+var Tales = require('../models/tales')
+var CompTales = require('../models/compTales')
 var config = require('../../config')
 
 module.exports = function(app, express) {
@@ -86,6 +88,37 @@ module.exports = function(app, express) {
 				 res.json(vis)
 			});
 		});
+
+	apiRouter.route('/tales_data')
+
+		.get(function(req, res) {
+			Tales.find(function(err, tales) {
+	
+				 res.json(tales)
+			});
+		});
+
+		
+	apiRouter.route('/complete_tales')
+
+		.get(function(req, res) {
+			CompTales.find(function(err, compTales) {
+	
+				 res.json(compTales)
+			});
+		})
+
+		.post(function(req, res) {
+
+			var compTales = new CompTales();
+
+			compTales.save(function(err){
+				if (err) res.send(err);
+
+				res.send('Tales created!')
+			});
+		});
+
 
 	return apiRouter;
 }

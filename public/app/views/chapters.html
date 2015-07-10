@@ -2,8 +2,15 @@
 	<div class="col-xs-10">
 		<a href="chapters-scroll" class="btn btn-info" role="button">Scroll View</a>
 		<a href="#" class="btn btn-success" role="button" ng-click="showDetails = ! showDetails">Characters</a>
-		<a href="#" class="btn btn-success" role="button">Structure</a>
-		<a href="#" class="btn btn-success" role="button">Context</a>
+		<a href="#" class="btn btn-success" role="button" ng-click="showTales = ! showTales">Tales</a>
+		<div class="btn-group" ng-class='{open: open}'>
+			<button href="#" class="btn btn-success" role="button">Context for Chapter</button>
+			<button class="btn btn-success dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'"><a href="#" ng-click="doc.chapter_title = ! doc.chapter_title">{{doc.chapter_title}}</a></li>
+		    </ul>
+		</div>
+		<a href="#" class="btn btn-primary" role="button">Footnotes</a>
 		<a href="#" class="btn btn-warning" role="button">Help</a>
 	</div>
 	<div class="col-xs-2">
@@ -19,6 +26,11 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec elementum orci. Praesent sed lorem quis arcu aliquet volutpat. Etiam fringilla nec magna at hendrerit. Nam rhoncus pellentesque nunc, vitae iaculis magna ultricies in. Donec nec ipsum id tellus congue maximus. Aliquam fermentum finibus mauris, at posuere nulla dictum eget. Quisque tempor auctor orci a gravida. Pellentesque aliquet volutpat quam vitae placerat.</p>
     </div>
 </div>
+<tabset class="row" ng-repeat="tales in chapter.tales_data" ng-class="{ 'hidden': ! showTales }">
+	<tab ng-repeat="tale in tales.tales" heading="{{tale.title}}">
+		<div>{{tale.description}}</div>
+	</tab>
+</tabset>
 <div class="row">
 	<div class="col-xs-12" id="content">
 		<tabset>

@@ -4,14 +4,18 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
 
   var self = this;
 
-  $http.get('miserables.json').success(function(data) {
-    self.viz_data = data;
-  });
+  Edition.compTales()
 
-  $http.get('melmoth-tree.json').success(function(data) {
-    self.tree_data = data;
-  });
+  .success(function(data) {
+    self.complete_tales = data;
+  })
 
+
+  Edition.tales_data()
+
+  .success(function(data) {
+    self.tales_data = data;
+  });
 
   Edition.vis_data()
 
@@ -66,40 +70,6 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
     return $sce.trustAsHtml(text)
   }
 })
-
-.filter('red', function($sce) {
-  return function(text, phrase) {
-    if (phrase) text = text.replace(new RegExp('(' + phrase + ')', 'gi'),
-      '<a href="#" tooltip-placement="top" tooltip="This is a test">$1</a>')
-
-    return $sce.trustAsHtml(text)
-  }
-})
-
-.filter('test', function() {
-  return function(paragraph, phrase) {
-    if (phrase) paragraph = paragraph.replace(new RegExp('(' + paragraph + ')', 'gi'),
-      '<a href="#" tooltip-placement="top" tooltip="This is a test">$1</a>')
-  };
-})
-
-.filter('test', function() {
-  return function(input, scope) {
-    if (input === scope.test_array) input = input.replace(new RegExp('(' + input + ')', 'gi'),
-      '<a href="#" tooltip-placement="bottom" tooltip="{{scope.test_array}}">$1</a>')
-  };
-})
-
-.filter('getNote', function() { //http://stackoverflow.com/questions/14302267/how-to-use-a-filter-in-a-controller
-  return function(input, notes) {
-    for (var i = 0; i < notes.length; i++) {
-      if (notes[i].keywords == input) input = input.replace(new RegExp('(' + input + ')', 'gi'),
-        '<a href="#" tooltip-placement="bottom" tooltip="{{' + notes[i].endnote_text + '}}">$1</a>')
-    }
-  }
-})
-
-
 
 /*.directive( 'crD3Bars', [
   function () {

@@ -5,7 +5,6 @@ angular.module('editionService', [])
 	// create a new object
 	var editionFactory = {};
 
-	// get a single edition
 	editionFactory.get = function(id) {
 		return $http.get('/edition/text/' + id);
 	};
@@ -14,7 +13,6 @@ angular.module('editionService', [])
 		return $http.get('/edition/paragraphs/');
 	}
 
-	// get all users
 	editionFactory.all = function() {
 		return $http.get('/edition/text/');
 	};
@@ -33,6 +31,14 @@ angular.module('editionService', [])
 
 	editionFactory.vis_data = function() {
 		return $http.get('edition/vis_data')
+	}
+
+	editionFactory.tales_data = function() {
+		return $http.get('edition/tales_data')
+	}
+
+	editionFactory.compTales = function() {
+		return $http.get('edition/complete_tales')
 	}
 	// return our entire userFactory object
 	return editionFactory;
