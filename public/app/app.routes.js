@@ -18,7 +18,7 @@ angular.module('app.routes', ['ngRoute'])
 		controller: 'chapterController as chapter'
 	})
 
-	.when('/about', {
+	.when('/literary-context', {
 		templateUrl : 'app/views/about.html',
 		controller: 'chapterController as chapter'
 	})
