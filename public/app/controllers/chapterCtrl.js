@@ -4,6 +4,10 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
 
   var self = this;
 
+  $http.get('60-novels-onelink.json').success(function(data) {
+    self.viz_data = data;
+  });
+
   Edition.compTales()
 
   .success(function(data) {
@@ -71,7 +75,7 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
   }
 })
 
-/*.directive( 'crD3Bars', [
+.directive( 'crD3Bars', [
   function () {
     return {
       restrict: 'E',
@@ -99,14 +103,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 
-var tip = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([-10, 0])
-    .html(function (d) {
-    return  d.name + "";
-})
-svg.call(tip);
- 
+
         //Render graph based on 'data'
         scope.render = function(data) {
 
@@ -132,9 +129,11 @@ node.append("circle")
     return color(d.group);
 })
 
-    .call(force.drag)
- .on('mouseover', tip.show) //Added
- .on('mouseout', tip.hide); //Added 
+node.append("text")
+      .attr("dx", 10)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.name })
+      .style("stroke", "gray");
 
 //Now we are giving the SVGs co-ordinates - the force layout is generating the co-ordinates which this code is using to update the attributes of the SVG elements
 force.on("tick", function () {
@@ -173,4 +172,5 @@ force.on("tick", function () {
         }
     };
 }
-]);*/
+]);
+

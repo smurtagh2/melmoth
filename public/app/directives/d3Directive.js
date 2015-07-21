@@ -27,7 +27,7 @@ angular.module('d3Dir', [])
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-   .linkStrength(0.9)
+   .linkStrength(1)
     .friction(0.9)
     .linkDistance(100)
     .charge(-200)
@@ -50,21 +50,24 @@ var tip = d3.tip()
 svg.call(tip);
  
         //Render graph based on 'data'
-        scope.render = function(data) {
+        scope.render = function(graph) {
+
+  var nodes = graph.nodes
+  var links = graph.links
 
   force
-      .nodes(data.nodes)
-      .links(data.links)
+      .nodes(nodes)
+      .links(links)
       .start();
 
   var link = svg.selectAll(".link")
-      .data(data.links)
+      .data(links)
     .enter().append("line")
       .attr("class", "link")
       .style("stroke-width", function(d) { return Math.sqrt(d.value); });
 
   var node = svg.selectAll(".node")
-    .data(data.nodes)
+    .data(nodes)
     .enter().append("g")
     .attr("class", "node")
     .call(force.drag);

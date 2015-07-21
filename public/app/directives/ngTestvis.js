@@ -6,7 +6,7 @@ app.directive('ngTestvis', function() {
     restrict: 'E',
     scope: {
       val: '='
-    }
+    },
     link: function(scope, element, attrs) {
       var color = d3.scale.category20();
 

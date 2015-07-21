@@ -1,3 +1,14 @@
+.topic-select{
+  padding-bottom:10px;
+}
+
+.topic-container{
+  border: 1px solid black;
+  padding:20px;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
 .para{
 	color: black;
 	text-indent: 50px;
@@ -181,8 +192,14 @@ div.endnote_content{
 
 /* D3JS */
 
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
 .link {
-  stroke: #ccc;
+  stroke: #999;
+  stroke-opacity: .6;
 }
 
 .node text {
