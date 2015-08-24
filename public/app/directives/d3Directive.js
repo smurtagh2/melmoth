@@ -108,6 +108,7 @@ force.on("tick", function () {
         return d.y;
     });
 });
+
 }
  
          //Watch 'data' and run scope.render(newVal) whenever it changes
