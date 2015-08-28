@@ -34,6 +34,9 @@
    top:0;
 }
 
+#discourse-heading{
+  text-align: center;
+}
 
 body {
 	position: relative;

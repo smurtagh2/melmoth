@@ -5,6 +5,8 @@ var User = require('../models/user')
 var Vis = require('../models/visualisation')
 var Tales = require('../models/tales')
 var CompTales = require('../models/compTales')
+var Paragraphs = require('../models/paragraphs')
+var ChapterTitles = require('../models/chapter_titles')
 var config = require('../../config')
 
 module.exports = function(app, express) {
@@ -27,7 +29,7 @@ module.exports = function(app, express) {
 			})
 		});
 
-	apiRouter.route('/paragraphs')
+	/*apiRouter.route('/paragraphs')
 
 		.get(function(req, res) {
 			Edition.findOne(
@@ -36,7 +38,7 @@ module.exports = function(app, express) {
 
 				res.json(editions);
 			});
-		});
+		});*/
 
 	apiRouter.route('/chapter_data')
 
@@ -119,6 +121,44 @@ module.exports = function(app, express) {
 			});
 		});
 
+
+	apiRouter.route('/paragraph_database')
+
+		.get(function(req, res) {
+			Paragraphs.find(function(err, paragraphs) {
+				res.json(paragraphs)
+			});
+		})
+
+		.post(function(req, res){
+
+			var paragraphs = new Paragraphs();
+
+			paragraphs.save(function(err){
+				if (err) res.send(err);
+
+				res.send('Paragraph created!')
+			})
+		})
+
+	apiRouter.route('/chapter_titles')
+
+		.get(function(req, res) {
+			ChapterTitles.find(function(err, chapter_titles) {
+				res.json(chapter_titles)
+			});
+		})
+
+		.post(function(req, res){
+
+			var chapter_titles = new ChapterTitles();
+
+			chapter_titles.save(function(err){
+				if (err) res.send(err);
+
+				res.send('Chapter Title created!')
+			})
+		})
 
 	return apiRouter;
 }

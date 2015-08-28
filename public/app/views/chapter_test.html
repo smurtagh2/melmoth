@@ -1,0 +1,48 @@
+<!--<div ng-repeat="items in chapter.chapter_titles">
+	<div ng-repeat="titles in items.chapters">
+		<h1>{{titles.title}}</h1>
+		<blockquote>
+			<p ng-bind-html="titles.epigraph.quote"></p>
+			<p>- {{titles.epigraph.bibl}}</p>
+		</blockquote>
+	</div>
+</div>-->
+<div class="row scroll-tab">
+	<div class="col-xs-10">
+		<a href="chapters-scroll" class="btn btn-info" role="button">Scroll View</a>
+		<a href="tales" class="btn btn-success" role="button">Tales View</a>
+		<a class="btn btn-warning" role="button" ng-click="showDetails = ! showDetails">Topic Model</a>
+		<!--<a href="#" class="btn btn-success" role="button" ng-click="showDetails = ! showDetails">Characters</a>
+		<a href="#" class="btn btn-success" role="button" ng-click="showTales = ! showTales">Tales</a>
+		<div class="btn-group" ng-class='{open: open}'>
+			<button href="#" class="btn btn-success" role="button">Context for Chapter</button>
+			<button class="btn btn-success dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'"><a href="#" ng-click="doc.chapter_title = ! doc.chapter_title">{{doc.chapter_title}}</a></li>
+		    </ul>
+		</div>
+		<a href="#" class="btn btn-primary" role="button">Footnotes</a>
+		<a href="#" class="btn btn-warning" role="button">Help</a>-->
+	</div>
+	<div class="col-xs-2">
+		<form role="search">
+			<div class="form-group">
+				<input ng-model="searchText" type="text" class="form-control" placeholder="Sort Text by Term">
+			</div>
+		</form>
+	</div>
+</div>
+<tabset ng-repeat="items in chapter.chapter_titles" ng-init="myVar=1">
+	<tab ng-repeat="titles in items.chapters" heading="{{titles.title}}" ng-click="myVar=titles.chapter_number">
+		<h3>{{titles.title}}</h1>
+		<div class="subgroup">
+			<blockquote>
+				<p ng-bind-html="titles.epigraph.quote"></p>
+				<p>- {{ titles.epigraph.bibl }}</p>
+			</blockquote>
+		</div>
+		<div ng-repeat="paragraphs in chapter.paragraph_database">
+			<p ng-repeat="paragraph in paragraphs.paragraphs | filter:searchText" ng-bind-html="paragraph.text | highlight:searchText" ng-if="paragraph.chapter == myVar"></p>
+		<div>
+	</tab>
+</tabset>

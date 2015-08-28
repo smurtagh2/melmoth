@@ -48,6 +48,16 @@ angular.module('app.routes', ['ngRoute'])
 		controller: 'chapterController as chapter'
 	})
 
+	.when('/chapter_test', {
+		templateUrl : 'app/views/chapter_test.html',
+		controller: 'chapterController as chapter'
+	})
+
+	.when('/tales_test', {
+		templateUrl : 'app/views/tales_test.html',
+		controller: 'chapterController as chapter'
+	})
+
 
 	// get rid of the hash in the URL
 	$locationProvider.html5Mode(true);

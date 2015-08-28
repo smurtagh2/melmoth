@@ -40,7 +40,16 @@ angular.module('editionService', [])
 	editionFactory.compTales = function() {
 		return $http.get('edition/complete_tales')
 	}
-	// return our entire userFactory object
+
+	editionFactory.paragraph_database = function() {
+		return $http.get('edition/paragraph_database')
+	}
+
+	editionFactory.chapter_titles = function() {
+		return $http.get('edition/chapter_titles')
+	}
+
+	// return entire userFactory object
 	return editionFactory;
 
 });

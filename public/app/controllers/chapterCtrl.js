@@ -8,6 +8,18 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
     self.viz_data = data;
   });
 
+  Edition.chapter_titles()
+
+  .success(function(data) {
+    self.chapter_titles = data;
+  })
+
+  Edition.paragraph_database()
+
+  .success(function(data) {
+    self.paragraph_database = data;
+  })
+
   Edition.compTales()
 
   .success(function(data) {
