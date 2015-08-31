@@ -111,9 +111,12 @@ force.on("tick", function () {
 
 }
  
-
+         //Watch 'data' and run scope.render(newVal) whenever it changes
+         //Use true for 'objectEquality' property so comparisons are done on equality and not reference
+          
+          /*scope.$watch('data', function(){
               scope.render(scope.data);
-  
+          }, true);  */
         }
     };
   }
