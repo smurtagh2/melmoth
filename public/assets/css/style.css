@@ -205,12 +205,11 @@ div.endnote_content{
   stroke-opacity: .6;
 }
 
-.node text {
-  pointer-events: none;
-  font: 10px sans-serif;
-}
+
 
 d3-tip {
     line-height: 1;
     color: black;
 }
+
+
