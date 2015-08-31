@@ -115,7 +115,7 @@ force.on("tick", function () {
          //Use true for 'objectEquality' property so comparisons are done on equality and not reference
           
           scope.$watch('data', function(){
-              scope.render(scope);
+              scope.render(scope.data);
           }, true); 
         }
     };
