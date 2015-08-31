@@ -1,0 +1,14 @@
+<tabset ng-repeat="items in chapter.chapter_titles" ng-init="myVar=1">
+	<tab ng-repeat="titles in items.chapters" heading="{{titles.title}}" ng-click="myVar=titles.chapter_number">
+		<h3>{{titles.title}}</h1>
+		<div class="subgroup">
+			<blockquote>
+				<p ng-bind-html="titles.epigraph.quote"></p>
+				<p>- {{ titles.epigraph.bibl }}</p>
+			</blockquote>
+		</div>
+		<div ng-repeat="paragraphs in chapter.paragraph_database">
+			<p ng-repeat="paragraph in paragraphs.paragraphs" ng-bind-html="paragraph.text" ng-if="paragraph.chapter == myVar"></p>
+		<div>
+	</tab>
+</tabset>
