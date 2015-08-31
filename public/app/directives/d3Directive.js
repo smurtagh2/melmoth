@@ -52,8 +52,8 @@ svg.call(tip);
         //Render graph based on 'data'
         scope.render = function(data) {
 
-  var nodes = data.nodes
-  var links = data.links
+  var nodes = scope.nodes
+  var links = scope.links
 
   force
       .nodes(nodes)
