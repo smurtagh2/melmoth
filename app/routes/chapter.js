@@ -7,6 +7,7 @@ var Tales = require('../models/tales')
 var CompTales = require('../models/compTales')
 var Paragraphs = require('../models/paragraphs')
 var ChapterTitles = require('../models/chapter_titles')
+var TopicModel = require('../models/topic_model')
 var config = require('../../config')
 
 module.exports = function(app, express) {
@@ -157,6 +158,25 @@ module.exports = function(app, express) {
 				if (err) res.send(err);
 
 				res.send('Chapter Title created!')
+			})
+		})
+
+	apiRouter.route('/topic_model')
+
+		.get(function(req, res) {
+			TopicModel.find(function(err, topic_model) {
+				res.json(topic_model)
+			});
+		})
+
+		.post(function(req, res){
+
+			var topic_model = new TopicModel();
+
+			topic_model.save(function(err){
+				if (err) res.send(err);
+
+				res.send('Topic Model created!')
 			})
 		})
 

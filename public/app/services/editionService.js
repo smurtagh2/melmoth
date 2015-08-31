@@ -49,6 +49,10 @@ angular.module('editionService', [])
 		return $http.get('edition/chapter_titles')
 	}
 
+	editionFactory.topic_model = function() {
+		return $http.get('edition/topic_model')
+	}
+
 	// return entire userFactory object
 	return editionFactory;
 
