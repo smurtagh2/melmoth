@@ -4,23 +4,9 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
 
   var self = this;
 
-  /*$http.get('60-novels-onelink.json').success(function(data) {
+  $http.get('60-novels-onelink.json').success(function(data) {
     self.viz_data = data;
-  });*/
-
-  Edition.topic_model()
-
-  .success(function(data) {
-    self.viz_data = data;
-  })
-
-
-  Edition.chapter_titles()
-
-  .success(function(data) {
-    self.chapter_titles = data;
-  })
-
+  });
 
   Edition.chapter_titles()
 
