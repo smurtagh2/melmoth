@@ -50,10 +50,10 @@ var tip = d3.tip()
 svg.call(tip);
  
         //Render graph based on 'data'
-        scope.render = function(graph) {
+        scope.render = function(data) {
 
-  var nodes = graph.nodes
-  var links = graph.links
+  var nodes = data.nodes
+  var links = data.links
 
   force
       .nodes(nodes)
