@@ -50,10 +50,10 @@ var tip = d3.tip()
 svg.call(tip);
  
         //Render graph based on 'data'
-        scope.render = function(data) {
+        scope.render = function(graph) {
 
-  var nodes = scope.nodes
-  var links = scope.links
+  var nodes = graph.nodes
+  var links = graph.links
 
   force
       .nodes(nodes)
@@ -111,11 +111,9 @@ force.on("tick", function () {
 
 }
  
-         //Watch 'data' and run scope.render(newVal) whenever it changes
-         //Use true for 'objectEquality' property so comparisons are done on equality and not reference
-          scope.$watch('data', function(){
+
               scope.render(scope.data);
-          }, true);  
+  
         }
     };
   }
