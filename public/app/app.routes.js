@@ -63,6 +63,11 @@ angular.module('app.routes', ['ngRoute'])
 		controller: 'chapterController as chapter'
 	})
 
+	.when('/paratexts', {
+		templateUrl : 'app/views/paratexts.html',
+		controller: 'chapterController as chapter'
+	})
+
 	// get rid of the hash in the URL
 	$locationProvider.html5Mode(true);
 	

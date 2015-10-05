@@ -111,6 +111,9 @@
 					</blockquote>
 					<div ng-repeat="para in doc.paragraphs | filter:searchText" class="row text-justify">
 						<p class="para" ng-bind-html="para.text | highlight:searchText" id="{{para.paragraph_id}}"></p>
+						<div ng-repeat="footnote in para.footnotes" class="footnote_box">
+							<p ng-bind-html="footnote.footnote_text"></P>
+						</div>
 					</div>
 				</div>
 			</tab>
