@@ -8,6 +8,10 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
     self.intro = data;
   });
 
+  $http.get('topic_model_one.json').success(function(data) {
+    self.topics = data;
+  });
+
 
   Edition.chapter_titles()
 

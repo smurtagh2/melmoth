@@ -1,13 +1,11 @@
 <div class="row scroll-tab">
-	<div class="col-xs-10">
-		<a href="chapters" class="btn btn-info" role="button">Tab View</a>
+	<div class="col-xs-8">
+		<a href="chapters-scroll" class="btn btn-primary" role="button">Complete View</a>
 		<a href="tales" class="btn btn-success" role="button">Tales View</a>
-		<!--<a href="#" class="btn btn-success" role="button">Characters</a>
-		<a href="#" class="btn btn-success" role="button">Structure</a>
-		<a href="#" class="btn btn-success" role="button">Context</a>
-		<a href="#" class="btn btn-warning" role="button">Help</a>-->
+		<a href="thematic" class="btn btn-info" role="button">Thematic View</a>
+		<a class="btn btn-warning" role="button" ng-click="showDetails = ! showDetails">Topic Model</a>
 	</div>
-	<div class="col-xs-2">
+	<div class="col-xs-4">
 		<form role="search">
 			<div class="form-group">
 				<input ng-model="searchText" type="text" class="form-control" placeholder="Sort Text by Term">
@@ -16,7 +14,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-xs-2">
+	<div class="col-md-2 col-xs-4">
 		<nav class="bs-docs-sidebar"> 
 			<ul id="sidebar" class="nav nav-stacked fixed">
 				<li ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'" du-scrollspy="{{doc.chapter_id}}">
@@ -25,7 +23,7 @@
 			</ul>
 		</nav>
 	</div>
-	<div class="col-xs-10" id="content">
+	<div class="col-md-10 col-xs-8" id="content">
 		<section ng-repeat="doc in chapter.chapters | orderBy:'chapter_number'" id="{{doc.chapter_id}}" class="group text-justify">
 			<h3>{{doc.chapter_title}}</h1>
 			<div class="subgroup">

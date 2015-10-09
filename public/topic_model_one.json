@@ -1,0 +1,33 @@
+{
+	"topic": [{
+		"title": "Topic One",
+		"label": "centre",
+		"weight": 2.50815,
+		"words": ["hand", "heart", "long", "eyes", "made", "young", "day", "thought", "time", "good", "man", "father", "heard", "head", "make", "left", "room", "half", "give"]
+	}, {
+		"title": "Topic Two",
+		"label": "",
+		"weight": 1.917,
+		"words": ["man", "great", "time", "country", "men", "day", "part", "young", "party", "made", "place", "left", "means", "found", "state", "youth", "present", "death", "make"]
+	}, {
+		"title": "Topic Three",
+		"label": "",
+		"weight": 1.35305,
+		"words": ["subject", "family", "attention", "house", "sir", "power", "friend", "character", "felt", "immediately", "received", "captain", "stranger", "person", "made", "till", "present", "situation", "friends"]
+	}, {
+		"title": "Topic Four",
+		"label": "",
+		"weight": 0.78172,
+		"words": ["mrs", "heart", "sir", "father", "feelings", "delwyn", "dear", "mother", "mind", "mr", "hope", "felt", "nature", "life", "happiness", "tender", "good", "affection", "castle"]
+	}, {
+		"title": "Topic Five",
+		"label": "",
+		"weight": 0.677,
+		"words": ["moment", "heart", "night", "light", "felt", "life", "love", "till", "father", "power", "voice", "heard", "god", "eyes", "figure", "appeared", "castle", "wild", "feel"]
+	}, {
+		"title": "Topic Six",
+		"label": "",
+		"weight": 0.50855,
+		"words": ["irish", "ireland", "country", "people", "prince", "human", "king", "nature", "english", "spirit", "mr", "state", "world", "soul", "church", "ancient", "called", "father", "lord"]
+	}]
+}
