@@ -44,7 +44,7 @@ angular.module('app.routes', ['ngRoute'])
 	})	
 
 	.when('/tales', {
-		templateUrl : 'app/views/tales-view.html',
+		templateUrl : 'app/views/tales-local.html',
 		controller: 'chapterController as chapter'
 	})
 
@@ -95,6 +95,11 @@ angular.module('app.routes', ['ngRoute'])
 
 	.when('/downloads', {
 		templateUrl : 'app/views/downloads.html',
+		controller: 'chapterController as chapter'
+	})
+
+	.when('/tales-local', {
+		templateUrl : 'app/views/tales-local.html',
 		controller: 'chapterController as chapter'
 	})
 

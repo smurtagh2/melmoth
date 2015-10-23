@@ -4,6 +4,10 @@ angular.module('chapterCtrl', ['editionService', 'ngSanitize', 'duScroll', 'ui.b
 
   var self = this;
 
+  $http.get('tales-complete.json').success(function(data) {
+    self.tales_local = data;
+  });
+
   $http.get('intro.json').success(function(data) {
     self.intro = data;
   });

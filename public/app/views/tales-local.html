@@ -682,16 +682,14 @@
 		<img src="assets/images/20topics.png" class="topic-images"></img>
 	</div>
 </div>
-<div class="row tales-view">
-	<tabset>
-		<tab ng-repeat="tale in chapter.complete_tales" heading="{{tale.title}}">
-			<h3 ng-bind-html="tale.title"></h3>
-			<div ng-repeat="para in tale.paragraphs | filter:searchText" class="row text-justify">
-				<p class="para" ng-bind-html="para.text | highlight:searchText" id="{{para.paragraph_id}}"></p>
-				<div ng-repeat="footnote in para.footnotes" class="footnote_box">
-					<p ng-bind-html="footnote.footnote_text"></P>
-				</div>
+<tabset>
+	<tab ng-repeat="tale in chapter.tales_local.tales" heading="{{tale.title}}">
+		<h3 ng-bind-html="tale.title"></h3>
+		<div ng-repeat="para in tale.paragraphs | filter:searchText" class="row text-justify">
+			<p class="para" ng-bind-html="para.text | highlight:searchText" id="{{para.paragraph_id}}"></p>
+			<div ng-repeat="footnote in para.footnotes" class="footnote_box">
+				<p ng-bind-html="footnote.footnote_text | highlight:searchText"></p>
 			</div>
-		</tab>
-	</tabset>
-</div>
+		</div>
+	</tab>
+</tabset>
