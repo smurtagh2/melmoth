@@ -1,27 +1,34 @@
-<div class="row thematic-btn-row col-xs-10 col-xs-offset-1">
-	<button type="button" class="btn btn-info" ng-click="topicVar=0">Religion</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=1">Escape</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=2">Old Melmoth</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=4">Castle / Royalty</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=5">Travelling</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=6">Island</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=7">Storm</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=8">Romantic</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=9">Family</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=11">Crowds/Audiences</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=12">Love</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=13">Sleep</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=14">Spanish Family and Marriage</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=15">Night and Gothic</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=16">Youth and Beauty</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=17">Family</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=18">Suffering</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=19">Monastic Life</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=20">Judaism</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=21">Inquisition</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=22">Feminine</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=23">Telling Tales and Stories</button>
-	<button type="button" class="btn btn-info" ng-click="topicVar=24">Reading and Writing</button>
+<div class="row">
+	<div class="col-xs-8">
+		<a href="chapters-scroll" class="btn btn-primary" role="button">Complete View</a>
+		<a href="chapters" class="btn btn-success" role="button">Tab View</a>
+		<a href="tales" class="btn btn-info" role="button">Tales View</a>
+	</div>
+</div>
+<div class="row thematic-btn-row">
+	<button type="button" class="btn btn-default" ng-click="topicVar=0">Religion</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=1">Escape</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=2">Old Melmoth</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=4">Castle / Royalty</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=5">Travelling</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=6">Island</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=7">Storm</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=8">Romantic</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=9">Family 1</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=11">Crowds/Audiences</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=12">Love</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=13">Sleep</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=14">Family 2</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=15">Night and Gothic</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=16">Youth and Beauty</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=17">Family 3</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=18">Suffering</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=19">Monastic Life</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=20">Judaism</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=21">Inquisition</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=22">Feminine</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=23">Telling Tales and Stories</button>
+	<button type="button" class="btn btn-default" ng-click="topicVar=24">Reading and Writing</button>
 </div>
 <div class="row">
 	<div ng-repeat="paragraphs in chapter.paragraph_database">
