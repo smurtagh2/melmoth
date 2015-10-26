@@ -93,6 +93,31 @@ angular.module('app.routes', ['ngRoute'])
 		controller: 'chapterController as chapter'
 	})
 
+	.when('/irish6-topic-data', {
+		templateUrl : 'app/views/irish6-topic-data.html',
+		controller: 'chapterController as chapter'
+	})
+
+	.when('/irish20-topic-model', {
+		templateUrl : 'app/views/irish20-topic-model.html',
+		controller: 'chapterController as chapter'
+	})
+
+	.when('/word-cloud', {
+		templateUrl : 'app/views/word-cloud.html',
+		controller: 'chapterController as chapter'
+	})
+
+	.when('/ireland-graph', {
+		templateUrl : 'app/views/ireland-graph.html',
+		controller: 'chapterController as chapter'
+	})
+
+	.when('/gothic-topic-model', {
+		templateUrl : 'app/views/gothic-topic-model.html',
+		controller: 'chapterController as chapter'
+	})
+
 	.when('/downloads', {
 		templateUrl : 'app/views/downloads.html',
 		controller: 'chapterController as chapter'
